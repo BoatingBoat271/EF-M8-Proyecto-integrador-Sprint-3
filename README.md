@@ -1,41 +1,94 @@
-# KanbanPro
+<h1 align="center">🚀 KanbanPro</h1>
 
-Aplicacion Kanban full-stack con autenticacion JWT, API REST segura y dashboard web conectado a PostgreSQL con Sequelize.
+<p align="center">
+  <strong>Gestión de tareas moderna, segura y lista para escalar</strong><br>
+  Plataforma Kanban full-stack con JWT, API REST y dashboard conectado a PostgreSQL.
+</p>
 
-Ideal para demostrar un flujo real de producto: registro/login, gestion de trabajo por tableros y datos persistentes por usuario.
+<p align="center">
+  <img src="https://img.shields.io/badge/Estado-Ready%20for%20Demo-22C55E?style=for-the-badge" alt="estado" />
+  <img src="https://img.shields.io/badge/Arquitectura-Full%20Stack-0EA5E9?style=for-the-badge" alt="arquitectura" />
+  <img src="https://img.shields.io/badge/Security-JWT%20Protected-F59E0B?style=for-the-badge" alt="security" />
+</p>
 
-## Por que este proyecto es vendible
+<p align="center">
+  <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white" alt="Node.js"></a>
+  <a href="https://expressjs.com/"><img src="https://img.shields.io/badge/Express-111111?style=flat-square&logo=express&logoColor=white" alt="Express"></a>
+  <a href="https://www.postgresql.org/"><img src="https://img.shields.io/badge/PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL"></a>
+  <a href="https://sequelize.org/"><img src="https://img.shields.io/badge/Sequelize-52B0E7?style=flat-square&logo=sequelize&logoColor=white" alt="Sequelize"></a>
+  <a href="https://jwt.io/"><img src="https://img.shields.io/badge/JWT-F59E0B?style=flat-square&logo=jsonwebtokens&logoColor=white" alt="JWT"></a>
+</p>
 
-- Resuelve una necesidad real: organizar tareas por tableros, listas y tarjetas.
-- Tiene arquitectura profesional: Express + Sequelize + PostgreSQL.
-- Incluye seguridad moderna: autenticacion con JWT y rutas protegidas.
-- Entrega experiencia completa: API para integraciones + interfaz web para uso diario.
-- Es escalable: base clara para agregar equipos, etiquetas, fechas y reportes.
+---
 
-## Stack tecnologico
+## ✨ ¿Qué hace especial a KanbanPro?
 
-- Backend: Node.js + Express
-- Base de datos: PostgreSQL
-- ORM: Sequelize
-- Auth: JWT + bcryptjs
-- Vistas: Handlebars (hbs)
+✅ Resuelve un problema real: organización de trabajo en tableros visuales.  
+✅ Tiene seguridad de nivel profesional con autenticación JWT.  
+✅ Combina backend sólido + frontend funcional en una sola demo.  
+✅ Se puede presentar como MVP académico o base de producto SaaS.
 
-## Funcionalidades principales
+> 💡 En pocas palabras: no es solo una API, es una experiencia completa de producto.
 
-- Registro e inicio de sesion de usuarios.
-- Generacion de token JWT y validacion de acceso.
-- CRUD completo de tableros.
-- CRUD completo de listas dentro de cada tablero.
-- CRUD completo de tarjetas dentro de cada lista.
-- Dashboard con datos reales del usuario autenticado.
+---
 
-## Requisitos
+## 🎯 Features destacadas
 
-- Node.js 18+ recomendado
+- 👤 Registro e inicio de sesión de usuarios
+- 🔐 Protección de rutas con Bearer Token
+- 🧩 CRUD completo de Tableros
+- 📚 CRUD completo de Listas por tablero
+- 📝 CRUD completo de Tarjetas por lista
+- 📊 Dashboard con datos reales del usuario autenticado
+- 🗂️ Persistencia relacional en PostgreSQL
+
+---
+
+## 🛠 Stack Tecnológico
+
+| Tecnología | Rol en el proyecto |
+|---|---|
+| Node.js | Runtime del servidor |
+| Express | Ruteo, middleware y API HTTP |
+| PostgreSQL | Persistencia de datos |
+| Sequelize | ORM y modelado de entidades |
+| JWT | Autenticación stateless |
+| bcryptjs | Hash seguro de contraseñas |
+| Handlebars (hbs) | Vistas web (login y dashboard) |
+
+---
+
+## ⚡ Inicio rápido (60 segundos)
+
+```bash
+npm install
+npm run db:create
+npm run seed
+npm run dev
+```
+
+### 🌐 URLs locales
+
+- Web: http://localhost:3000
+- API: http://localhost:3000/api
+
+### 📦 Scripts disponibles
+
+- npm run start → inicia en producción
+- npm run dev → desarrollo con nodemon
+- npm run db:create → crea la base de datos
+- npm run seed → inserta datos iniciales
+- npm run test:crud → prueba básica CRUD
+
+---
+
+## 🔧 Configuración de entorno
+
+Requisitos:
+
+- Node.js 18+
 - PostgreSQL activo
-- Archivo `.env` en la raiz del proyecto
-
-### Variables de entorno minimas
+- Archivo .env en la raíz
 
 ```env
 DB_HOST=localhost
@@ -47,89 +100,104 @@ JWT_SECRET=kanbanpro_secret_sprint3
 JWT_EXPIRES_IN=2h
 ```
 
-## Inicio rapido
-
-```bash
-npm install
-npm run db:create
-npm run seed
-npm run dev
-```
-
-La app quedara disponible en:
-
-- Web: `http://localhost:3000`
-- API base: `http://localhost:3000/api`
-
-## Scripts disponibles
-
-- `npm run start`: inicia en modo produccion.
-- `npm run dev`: inicia con nodemon (desarrollo).
-- `npm run db:create`: crea la base si no existe.
-- `npm run seed`: carga datos semilla.
-- `npm run test:crud`: prueba CRUD basica.
-
 Tip si ejecutas comandos desde otra carpeta:
 
 ```bash
 npm --prefix "c:\\Users\\pablo\\OneDrive\\Documentos\\EF-M8 Proyecto integrador Sprint 3" run dev
 ```
 
-## Flujo de uso (API)
+---
 
-1. Registrar usuario: `POST /api/auth/register`
-2. Iniciar sesion: `POST /api/auth/login`
-3. Copiar token recibido en la respuesta
-4. Enviar header en rutas protegidas:
+## 🔐 Flujo de autenticación
+
+1. Registrar usuario en POST /api/auth/register
+2. Iniciar sesión en POST /api/auth/login
+3. Copiar el token de la respuesta
+4. Enviar token en rutas protegidas:
 
 ```http
 Authorization: Bearer TU_TOKEN
 ```
 
-5. Consumir CRUD de tableros, listas y tarjetas
+---
 
-## Endpoints principales
+## 📡 Endpoints principales
 
 ### Auth
 
-- `POST /api/auth/register`
-  - Body JSON: `{ "email": "usuario@mail.com", "password": "12345678" }`
-- `POST /api/auth/login`
-  - Body JSON: `{ "email": "usuario@mail.com", "password": "12345678" }`
-  - Respuesta esperada: `{ "ok": true, "token": "..." }`
+- POST /api/auth/register
+  - Body: { "email": "usuario@mail.com", "password": "12345678" }
+- POST /api/auth/login
+  - Body: { "email": "usuario@mail.com", "password": "12345678" }
+  - Response: { "ok": true, "token": "..." }
 
 ### Tableros (protegido)
 
-- `GET /api/tableros`
-- `POST /api/tableros`
-  - Body JSON: `{ "nombre": "Mi tablero", "descripcion": "Texto" }`
-- `PUT /api/tableros/:id`
-- `DELETE /api/tableros/:id`
+- GET /api/tableros
+- POST /api/tableros
+- PUT /api/tableros/:id
+- DELETE /api/tableros/:id
 
 ### Listas (protegido)
 
-- `POST /api/tableros/:tableroId/listas`
-  - Body JSON: `{ "nombre": "Pendiente", "orden": 1 }`
-- `PUT /api/tableros/:tableroId/listas/:id`
-- `DELETE /api/tableros/:tableroId/listas/:id`
+- POST /api/tableros/:tableroId/listas
+- PUT /api/tableros/:tableroId/listas/:id
+- DELETE /api/tableros/:tableroId/listas/:id
 
 ### Tarjetas (protegido)
 
-- `POST /api/listas/:listaId/tarjetas`
-  - Body JSON: `{ "titulo": "Tarea", "descripcion": "Detalle", "prioridad": "Media" }`
-- `PUT /api/listas/:listaId/tarjetas/:id`
-- `DELETE /api/listas/:listaId/tarjetas/:id`
+- POST /api/listas/:listaId/tarjetas
+- PUT /api/listas/:listaId/tarjetas/:id
+- DELETE /api/listas/:listaId/tarjetas/:id
 
-## Dashboard web
+---
 
-1. Ir a `/login`
-2. Iniciar sesion con credenciales validas
-3. El sistema redirige a `/dashboard?token=...`
-4. Se valida el token y se cargan tableros, listas y tarjetas del usuario
+## 🧱 Estructura del proyecto
 
-## Proximos pasos recomendados
+```text
+EF-M8 Proyecto integrador Sprint 3/
+|-- app.js
+|-- create-db.js
+|-- seed.js
+|-- test-crud.js
+|-- config/
+|   `-- database.js
+|-- data/
+|   `-- data.json
+|-- middleware/
+|   `-- auth.js
+|-- models/
+|   |-- index.js
+|   |-- Usuario.js
+|   |-- Tablero.js
+|   |-- Lista.js
+|   `-- Tarjeta.js
+|-- routes/
+|   `-- api.js
+|-- views/
+|   |-- home.hbs
+|   |-- login.hbs
+|   |-- register.hbs
+|   |-- dashboard.hbs
+|   `-- partials/
+|       |-- header.hbs
+|       `-- footer.hbs
+`-- public/
+    `-- style.css
+```
 
-- Agregar control de roles y permisos.
-- Implementar filtros por prioridad y fechas.
-- Incorporar drag & drop en el dashboard.
-- Preparar despliegue con Docker.
+---
+
+## 🗺️ Roadmap sugerido
+
+- Drag & drop entre listas
+- Filtros por prioridad y fecha
+- Etiquetas y asignación por usuario
+- Roles y permisos por equipo
+- Docker + CI/CD para despliegue
+
+---
+
+## 👨‍💻 Autor
+
+Proyecto desarrollado para EF-M8 Sprint 3.
