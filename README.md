@@ -90,6 +90,8 @@ Requisitos:
 - PostgreSQL activo
 - Archivo .env en la raíz
 
+Variables de entorno mínimas:
+
 ```env
 DB_HOST=localhost
 DB_PORT=5432
@@ -105,6 +107,35 @@ Tip si ejecutas comandos desde otra carpeta:
 ```bash
 npm --prefix "c:\\Users\\pablo\\OneDrive\\Documentos\\EF-M8 Proyecto integrador Sprint 3" run dev
 ```
+
+## 🚀 Instalación completa
+
+```bash
+# 1) Clonar el repositorio
+git clone https://github.com/BoatingBoat271/EF-M8-Proyecto-integrador-Sprint-3.git
+
+# 2) Entrar al proyecto
+cd EF-M8-Proyecto-integrador-Sprint-3
+
+# 3) Instalar dependencias
+npm install
+
+# 4) Crear archivo .env desde ejemplo
+copy .env.example .env
+
+# 5) Crear base de datos
+npm run db:create
+
+# 6) Cargar datos de ejemplo
+npm run seed
+
+# 7) Levantar servidor
+npm run dev
+```
+
+Aplicación disponible en `http://localhost:3000`.
+
+Demo en vivo: https://kanban-pro-pablo.onrender.com
 
 ---
 
